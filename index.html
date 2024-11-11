@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <!--Creado por Diego Arce Larios-->
+    <head>
+        <link rel = "stylesheet" href="style.css">
+        <title>hidrax-reservar</title>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-database.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyD6JtmiUkcxak-6cBQCXEiC0YoCTB3ksak",
+                authDomain: "hidrax-a4c35.firebaseapp.com",
+                databaseURL: "https://hidrax-a4c35-default-rtdb.firebaseio.com",
+                projectId: "hidrax-a4c35",
+                storageBucket: "hidrax-a4c35.appspot.com",
+                messagingSenderId: "88771266732",
+                appId: "1:88771266732:web:a49a91e359778b9bf67709"
+            };
+            // Inicia Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+    </head>
+    <body style="display: flex; background-color: black; flex-direction: column; margin: 4%;">
+        
+        <div style="display: flex; background-color: rgb(7, 46, 18) ;
+        width: 97%; border-radius: 15px; padding: 20px; margin-bottom: 20px; justify-content: space-between; flex-direction: row">
+            <img src="./assets/hidrax_logo.png" style="display: flex; height: 100px;">
+            <h1 style="display: flex; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;">
+                Reservar
+            </h1>
+            <img id = "imagen_animada" src="./assets/mono_aguacate.png" style="display: flex; height: 80px; 
+            background-color: black; padding: 10px; border: white solid 2px; border-radius: 30px;">
+        </div>
+        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+            <a href="https://hidraxcomapny.github.io/hidrax-inicio/">
+                <button class="buttons">
+                    <h2 class="text_button">Inicio</h2>
+                </button>
+            </a>
+            <a href="https://hidraxcomapny.github.io/hidrax-info/">
+                <button class="buttons">
+                    <h2 class="text_button">Info</h2>
+                </button>
+            </a>
+            <a href="https://hidraxcomapny.github.io/hidrax-catalogo/">
+                <button class="buttons">
+                    <h2 class="text_button">Catálogo</h2>
+                </button>
+            </a>
+            <a href="https://hidraxcomapny.github.io/hidrax-reservar/">
+                <button class="buttons"  style="background-color: rgb(7, 46, 18); margin-bottom: 10px;">
+                    <h2 class="text_button">Reservar</h2>
+                </button>
+            </a>
+        </div>
+        <div id = "mega_box" style="display: flex; width: 100%; border: white solid 2px; border-radius: 15px;">
+            <div style="display: flex; margin: 20px; flex-direction: column;">
+                <h1>Escoge tu fecha de entrega:</h1>
+                <div class = "row_boxes" style="display: flex; margin-bottom: 5%;">
+                    <input id = "date" class = "general_input" type="date">
+                    <input id = "hour" class = "general_input"type="time">
+                </div>
+                <h1>Nombre al quien se entregara:</h1>
+                <input id = "name" class = "general_input" type="text" placeholder="Max.12 letras..." maxlength="12">
+                <h1>Teléfono:</h1>
+                <input id = "tel" class = "general_input" type="text" placeholder="##########" maxlength="12">
+                <h1>Cantidad de botellas y sabor de estas:</h1>
+                <div class="row_boxes">
+                    <input id = "tablet" class = "general_input" type="range" min="1" max="5" step="1"
+                    value="1">
+                    <h2 id = "tablet_text">0</h2>
+                </div>
+
+
+                <button class="buttons_2" id = "boton_x" style="background-color: black;">
+                    <h2>Aguacate y coco</h2>
+                </button>
+                <button class="buttons_2" id = "boton_y" style="background-color: black;">
+                    <h2>Naranja y miel</h2>
+                </button>
+
+                <button id = "button_submit" style="display: flex; height: 8%; width: 10%; margin-top: 50px;
+                border-radius: 15px; border-color: white; border-width: 3px; 
+                background-color: rgb(7, 60, 30);"><h2>Enviar</h2></button>
+                
+
+                <h1>Indicaciones para pedir nuestro producto por este medio:</h1>
+                
+                <p>
+                    1. Solo se acepta pedidos del mismo año.
+                </p> 
+                <p>
+                    2. Solo aceptamos pedidos con tres días de anticipación
+                </p> 
+                <p>
+                    3. Los pedidos los podremos estar dando de 8:00 a.m. a antes de las 3:00 p.m.
+                </p>
+                <p>
+                    4. El pedido se podra entregar con 5 minutos de tolerancia
+                </p>
+                <p>
+                    5. Si requiere un pedido mayor a 5, le sugerimos usar preferentemente nuestro correo
+                    <a href="mailto:hidraxinformacion@gmail.com" style="color: rgb(126, 211, 126);">hidraxinformacion@gmail.com</a>
+                </p>
+                <div class="row_boxes" style="justify-content: space-between;">
+                    
+                </div>
+            </div>
+        </div>
+        <script src="./incio.js"></script>
+    </body>
+</html>
